@@ -18,7 +18,7 @@ URL_LIST = f"{BASE}/sync/ratings"
 URL_UPSERT = f"{BASE}/sync/ratings"
 URL_UNRATE = f"{BASE}/sync/ratings/remove"
 
-CACHE_PATH = Path("/config/.cw_state/mdblist_ratings.index.json")
+CACHE_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/mdblist_ratings.index.json")
 CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 

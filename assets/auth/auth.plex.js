@@ -61,7 +61,7 @@
 
       let cfg = null;
       try {
-        cfg = await fetch("/api/config" + bust(), { cache: "no-store" }).then(r => r.json());
+        cfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch" + bust(), { cache: "no-store" }).then(r => r.json());
       } catch {}
 
       const p = (cfg && cfg.plex) || {};
@@ -142,7 +142,7 @@
   // ---------- Config → UI
   async function hydratePlexFromConfigRaw() {
     try {
-      const r = await fetch("/api/config", { cache: "no-store" }); if (!r.ok) return;
+      const r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }); if (!r.ok) return;
       const cfg = await r.json(); const p = cfg?.plex || {};
       await waitFor("#plex_server_url"); await waitFor("#plex_username");
       const set = (id, val) => { const el = $(id); if (el != null && val != null) el.value = String(val); };
@@ -273,7 +273,7 @@
       // Load existing config server_url first
       let cfgUrl = "";
       try {
-        const rCfg = await fetch("/api/config?ts=" + Date.now(), { cache: "no-store" });
+        const rCfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch?ts=" + Date.now(), { cache: "no-store" });
         if (rCfg.ok) {
           const cfg = await rCfg.json();
           cfgUrl = (cfg?.plex?.server_url || "").trim();

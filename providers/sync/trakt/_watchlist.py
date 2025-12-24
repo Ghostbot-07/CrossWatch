@@ -21,7 +21,7 @@ BASE = "https://api.trakt.tv"
 URL_ALL = f"{BASE}/sync/watchlist"
 URL_REMOVE = f"{BASE}/sync/watchlist/remove"
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 STATE_DIR.mkdir(parents=True, exist_ok=True)
 SHADOW = STATE_DIR / "trakt_watchlist.shadow.json"
 UNRESOLVED_PATH = STATE_DIR / "trakt_watchlist.unresolved.json"

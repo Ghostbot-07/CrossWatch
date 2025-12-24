@@ -19,7 +19,7 @@ BASE = "https://api.mdblist.com"
 URL_LIST = f"{BASE}/watchlist/items"
 URL_MODIFY = f"{BASE}/watchlist/items/{{action}}"
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 STATE_DIR.mkdir(parents=True, exist_ok=True)
 SHADOW = STATE_DIR / "mdblist_watchlist.shadow.json"
 UNRESOLVED_PATH = STATE_DIR / "mdblist_watchlist.unresolved.json"

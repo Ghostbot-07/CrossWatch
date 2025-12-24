@@ -18,9 +18,9 @@ from ._common import (
 )
 from cw_platform.id_map import canonical_key, minimal as id_minimal
 
-UNRESOLVED_PATH = "/config/.cw_state/emby_history.unresolved.json"
-SHADOW_PATH = "/config/.cw_state/emby_history.shadow.json"
-BLACKBOX_PATH = "/config/.cw_state/emby_history.emby.blackbox.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby_history.unresolved.json"
+SHADOW_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby_history.shadow.json"
+BLACKBOX_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby_history.emby.blackbox.json"
 
 
 def _log(msg: str) -> None:

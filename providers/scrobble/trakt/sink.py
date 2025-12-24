@@ -238,7 +238,7 @@ def _guid_search(ev: ScrobbleEvent, cfg: dict[str, Any]) -> dict[str, Any] | Non
 
 
 def _ar_state_file() -> Path:
-    base = Path("/config/.cw_state") if Path("/config/config.json").exists() else Path(".cw_state")
+    base = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state") if Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json").exists() else Path(".cw_state")
     try:
         base.mkdir(parents=True, exist_ok=True)
     except Exception:

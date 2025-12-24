@@ -17,7 +17,7 @@ import requests
 from cw_platform.id_map import canonical_key, minimal as id_minimal, ids_from, ids_from_guid
 from .._mod_common import request_with_retries
 
-UNRESOLVED_PATH = "/config/.cw_state/plex_watchlist.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex_watchlist.unresolved.json"
 
 DISCOVER = "https://discover.provider.plex.tv"
 METADATA = "https://metadata.provider.plex.tv"

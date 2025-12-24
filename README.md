@@ -121,7 +121,7 @@ It supports **movies** and **shows/episodes** Anime is not supported yet....sorr
 ## 🐳 Run as Container
 
 ```bash
-docker run -d   --name crosswatch   -p 8787:8787   -v /path/to/config:/config   -e TZ=Europe/Amsterdam   ghcr.io/cenodude/crosswatch:latest
+docker run -d   --name crosswatch   -p 8787:8787   -v /path/to/data/data/com.termux/files/home/projects/CrossWatch:/data/data/com.termux/files/home/projects/CrossWatch   -e TZ=Europe/Amsterdam   ghcr.io/cenodude/crosswatch:latest
 ```
 
 or
@@ -137,14 +137,14 @@ services:
     environment:
       - TZ=Europe/Amsterdam
     volumes:
-      - /path/to/config:/config
+      - /path/to/data/data/com.termux/files/home/projects/CrossWatch:/data/data/com.termux/files/home/projects/CrossWatch
     restart: unless-stopped
 ```
 
 > The container exposes the web UI at:  
 > 👉 http://localhost:8787
 
-By default <code>CONFIG_BASE</code> will be <code>/config</code> inside the container.  
+By default <code>CONFIG_BASE</code> will be <code>/data/data/com.termux/files/home/projects/CrossWatch</code> inside the container.  
 Your <code>config.json</code>, <code>state.json</code>, <code>statistics.json</code>, etc. will all be stored there.
 
 ---

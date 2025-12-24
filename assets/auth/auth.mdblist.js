@@ -14,7 +14,7 @@
   }
 
   async function getCfg() {
-    const r = await fetchJSON("/api/config", { cache: "no-store" });
+    const r = await fetchJSON("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" });
     return r.ok ? (r.data || {}) : {};
   }
 

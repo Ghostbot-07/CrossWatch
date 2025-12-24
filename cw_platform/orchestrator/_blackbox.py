@@ -7,7 +7,7 @@ from collections.abc import Mapping, Iterable
 from typing import Any
 import json, time
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 
 def _read_json(p: Path) -> dict[str, Any]:
     try:
@@ -55,7 +55,7 @@ def _load_bb_cfg(cfg: Mapping[str, Any] | None) -> dict[str, Any]:
                 return {**_DEFAULT_BB, **bb}
             if any(k in cfg for k in ("promote_after", "pair_scoped", "enabled")):
                 return {**_DEFAULT_BB, **cfg}
-        conf_p = Path("/config/config.json")
+        conf_p = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
         if conf_p.exists():
             raw = json.loads(conf_p.read_text("utf-8")) or {}
             bb = ((raw.get("sync") or {}).get("blackbox") or {})

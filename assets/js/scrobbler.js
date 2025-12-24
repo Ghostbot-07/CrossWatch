@@ -61,7 +61,7 @@
   const provider=()=>String(read("scrobble.watch.provider","plex")||"plex").toLowerCase();
 
   const API={
-    cfgGet:()=>j("/api/config"),
+    cfgGet:()=>j("/api/data/data/com.termux/files/home/projects/CrossWatch"),
     users:async()=>{
       if(provider()==="emby"){
         const x=await j("/api/emby/users");
@@ -572,13 +572,13 @@
       cfg.plex=Object.assign({}, cfg.plex||{}, rootPatch.plex||{});
       cfg.emby=Object.assign({}, cfg.emby||{}, rootPatch.emby||{});
 
-      const r=await fetch("/api/config",{
+      const r=await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch",{
         method:"POST",
         headers:{ "Content-Type":"application/json" },
         cache:"no-store",
         body:JSON.stringify(cfg),
       });
-      if(!r.ok) throw new Error(`POST /api/config ${r.status}`);
+      if(!r.ok) throw new Error(`POST /api/data/data/com.termux/files/home/projects/CrossWatch ${r.status}`);
 
       w._cfgCache=cfg;
       STATE.cfg=cfg;

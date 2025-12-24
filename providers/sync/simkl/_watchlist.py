@@ -28,7 +28,7 @@ URL_ADD = f"{BASE}/sync/add-to-list"
 URL_REMOVE = f"{BASE}/sync/history/remove"
 URL_SEARCH_ID = f"{BASE}/search/id"
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 UNRESOLVED_PATH = STATE_DIR / "simkl.watchlist.unresolved.json"
 SHADOW_PATH = STATE_DIR / "simkl.watchlist.shadow.json"
 

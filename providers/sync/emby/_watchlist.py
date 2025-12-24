@@ -33,7 +33,7 @@ from ._common import (
 
 from cw_platform.id_map import minimal as id_minimal, canonical_key
 
-UNRESOLVED_PATH = "/config/.cw_state/emby_watchlist.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby_watchlist.unresolved.json"
 
 
 def _log(msg: str) -> None:

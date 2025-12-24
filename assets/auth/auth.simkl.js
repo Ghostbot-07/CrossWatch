@@ -78,7 +78,7 @@
       if (Date.now() >= deadline) { simklPoll = null; return; }
       const settingsVisible = !!($("page-settings") && !$("page-settings").classList.contains("hidden"));
       if (d.hidden || !settingsVisible) { simklPoll = setTimeout(poll, 5000); return; }
-      let cfg = null; try { cfg = await fetch("/api/config" + bust(), { cache: "no-store" }).then(r => r.json()); } catch {}
+      let cfg = null; try { cfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch" + bust(), { cache: "no-store" }).then(r => r.json()); } catch {}
       const tok = (cfg?.simkl?.access_token || cfg?.auth?.simkl?.access_token || "").trim();
       if (tok) { try { const el = $("simkl_access_token"); if (el) el.value = tok; } catch {} try { setSimklSuccess(true); } catch {} simklPoll = null; return; }
       simklPoll = setTimeout(poll, back[Math.min(i++, back.length - 1)]);

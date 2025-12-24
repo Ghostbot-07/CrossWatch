@@ -66,7 +66,7 @@ def _log(msg: str) -> None:
         print(f"[SIMKL] {msg}")
 
 
-STATE_DIR = "/config/.cw_state"
+STATE_DIR = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state"
 ACTIVITIES_SHADOW = f"{STATE_DIR}/simkl.activities.shadow.json"
 
 

@@ -28,7 +28,7 @@ from ._common import (
     normalize as jelly_normalize,
 )
 
-UNRESOLVED_PATH = "/config/.cw_state/jellyfin_watchlist.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/jellyfin_watchlist.unresolved.json"
 
 
 def _log(msg: str) -> None:

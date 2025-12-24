@@ -27,7 +27,7 @@ BASE = "https://api.simkl.com"
 URL_ADD = f"{BASE}/sync/ratings"
 URL_REMOVE = f"{BASE}/sync/ratings/remove"
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 UNRESOLVED_PATH = str(STATE_DIR / "simkl_ratings.unresolved.json")
 R_SHADOW_PATH = str(STATE_DIR / "simkl.ratings.shadow.json")
 

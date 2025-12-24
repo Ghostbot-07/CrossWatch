@@ -20,8 +20,8 @@ from ._common import (
     sort_guid_candidates,
 )
 
-UNRESOLVED_PATH = "/config/.cw_state/plex_history.unresolved.json"
-SHADOW_PATH = "/config/.cw_state/plex_history.shadow.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex_history.unresolved.json"
+SHADOW_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex_history.shadow.json"
 
 
 def _log(msg: str) -> None:

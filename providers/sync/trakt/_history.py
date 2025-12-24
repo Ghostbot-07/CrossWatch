@@ -20,8 +20,8 @@ URL_ADD = f"{BASE}/sync/history"
 URL_REMOVE = f"{BASE}/sync/history/remove"
 URL_COLL_ADD = f"{BASE}/sync/collection"
 
-UNRESOLVED_PATH = "/config/.cw_state/trakt_history.unresolved.json"
-LAST_LIMIT_PATH = Path("/config/.cw_state/trakt_last_limit_error.json")
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/trakt_history.unresolved.json"
+LAST_LIMIT_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/trakt_last_limit_error.json")
 
 def _record_limit_error(feature: str) -> None:
     try:

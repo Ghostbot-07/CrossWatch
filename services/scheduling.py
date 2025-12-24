@@ -86,7 +86,7 @@ def compute_next_run(now: datetime, sch: dict[str, Any]) -> datetime:
         except Exception:
             n = 2
         anchor = (now if isinstance(now, datetime) else _now_local_naive()).replace(second=0, microsecond=0)
-        return _apply_jitter(anchor + timedelta(hours=n), sch)
+        return _apply_jitter(anchor + timedelta(minutes=n), sch)
 
     if mode == "daily_time":
         hh, mm = (_parse_hhmm((sch.get("daily_time") or "").strip()) or (3, 30))

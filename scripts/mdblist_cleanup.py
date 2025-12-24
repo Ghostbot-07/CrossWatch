@@ -12,8 +12,8 @@ from typing import Any, Iterable, Optional
 
 import requests
 
-CONFIG_PATH = Path("/config/config.json")
-BACKUP_DIR = Path("/config/backup")
+CONFIG_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
+BACKUP_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/backup")
 RETENTION_DAYS = 15
 
 BASE = "https://api.mdblist.com"
@@ -114,7 +114,7 @@ def build_meta(cfg: dict[str, Any]) -> dict[str, Any]:
     b = cfg_block(cfg)
     apikey = str(b.get("api_key") or "").strip()
     if not apikey:
-        raise RuntimeError("Missing mdblist.api_key in /config/config.json.")
+        raise RuntimeError("Missing mdblist.api_key in /data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json.")
     return {
         "apikey": apikey,
         "timeout": float(b.get("timeout", 10) or 10),

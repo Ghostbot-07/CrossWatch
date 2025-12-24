@@ -43,13 +43,11 @@ try:
 except Exception:
     feat_ratings = None
 
-
 _FEATURES: dict[str, Any] = {}
 if feat_watchlist:
     _FEATURES["watchlist"] = feat_watchlist
 if feat_ratings:
     _FEATURES["ratings"] = feat_ratings
-
 
 def _features_flags() -> dict[str, bool]:
     return {

@@ -31,7 +31,7 @@ def _load_config() -> dict[str, Any]:
         from cw_platform.config_base import load_config as _load_cfg
         return _load_cfg()
     except Exception:
-        p = Path("/config/config.json")
+        p = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
         try:
             return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
         except Exception:

@@ -162,7 +162,7 @@
 
   // Data fetching
   async function readConfig() {
-    const cfg = await fetchJSON("/api/config?t=" + Date.now());
+    const cfg = await fetchJSON("/api/data/data/com.termux/files/home/projects/CrossWatch?t=" + Date.now());
     return cfg || {};
   }
 
@@ -190,7 +190,7 @@
 
   async function getMetadataSummary() {
     const [cfg, mansRaw] = await Promise.all([
-      fetchJSON("/api/config?t=" + Date.now()),
+      fetchJSON("/api/data/data/com.termux/files/home/projects/CrossWatch?t=" + Date.now()),
       fetchJSON("/api/metadata/providers?t=" + Date.now())
     ]);
 

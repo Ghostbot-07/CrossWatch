@@ -27,7 +27,7 @@ URL_RAT_EPI = f"{BASE}/sync/ratings/episodes"
 URL_UPSERT = f"{BASE}/sync/ratings"
 URL_UNRATE = f"{BASE}/sync/ratings/remove"
 
-CACHE_PATH = "/config/.cw_state/trakt_ratings.index.json"
+CACHE_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/trakt_ratings.index.json"
 
 
 def _log(msg: str) -> None:

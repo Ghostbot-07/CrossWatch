@@ -216,7 +216,7 @@ async function loadProviders(state){
 }
 
 async function loadConfigBits(state){
-  const cfg=(await getJSON("/api/config?cb="+Date.now()))||{}, s=cfg?.sync||{};
+  const cfg=(await getJSON("/api/data/data/com.termux/files/home/projects/CrossWatch?cb="+Date.now()))||{}, s=cfg?.sync||{};
   state.cfgRaw=cfg||{};
   const dropOn=!!s.drop_guard;
   const massOn=!!s.allow_mass_delete && !dropOn;
@@ -297,7 +297,7 @@ function fetchServerLibraries(kind){
 
 function fetchPairServerConfig(){
   if(pairServerCfgPromise) return pairServerCfgPromise;
-  pairServerCfgPromise=fetch("/api/config",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+  pairServerCfgPromise=fetch("/api/data/data/com.termux/files/home/projects/CrossWatch",{cache:"no-store"}).then(r=>r.ok?r.json():{}).catch(()=>({}));
   return pairServerCfgPromise;
 }
 
@@ -1358,7 +1358,7 @@ function bindChangeHandlers(state,root){
 // Save config bits
 async function saveConfigBits(state){
   try{
-    const cur=await fetch("/api/config",{cache:"no-store"}).then(r=>r.ok?r.json():{});
+    const cur=await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch",{cache:"no-store"}).then(r=>r.ok?r.json():{});
     const cfg=typeof structuredClone==="function"?structuredClone(cur||{}):jclone(cur||{});
 
     if(ID("gl-dry")){
@@ -1538,8 +1538,8 @@ async function saveConfigBits(state){
       cfg.trakt=tr;
     }
 
-    const res=await fetch("/api/config",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(cfg)});
-    if(!res.ok)throw new Error("POST /api/config "+res.status);
+    const res=await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(cfg)});
+    if(!res.ok)throw new Error("POST /api/data/data/com.termux/files/home/projects/CrossWatch "+res.status);
   }catch(e){console.warn("[cx] saving config bits failed",e)}
 }
 

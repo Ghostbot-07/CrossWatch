@@ -45,9 +45,9 @@
 
     let cfg = {};
     try {
-      cfg = await fetchJSON("/api/config?no_secrets=1");
+      cfg = await fetchJSON("/api/data/data/com.termux/files/home/projects/CrossWatch?no_secrets=1");
     } catch (e) {
-      console.error("[Insights] Failed to load /api/config", e);
+      console.error("[Insights] Failed to load /api/data/data/com.termux/files/home/projects/CrossWatch", e);
       cfg = {};
     }
 
@@ -699,7 +699,7 @@
   }
 
   async function openCrosswatchSnapshotPicker(feature) {
-    const rootDir = "/config/.cw_provider";
+    const rootDir = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider";
     const snapRoot = `${rootDir}/snapshots`;
     const formatSnapshotLabel = name => {
       const base = String(name || "").replace(/\.json$/,"");

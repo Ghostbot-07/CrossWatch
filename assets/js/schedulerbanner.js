@@ -224,7 +224,7 @@ S.busy=false; renderSched() }
 /* Read scrobble once and derive both Watcher and Webhook states */
 async function fetchScrobble(){ if(W.busy||H.busy) return; W.busy=H.busy=true;
 try{
-  const c=await fetch('/api/config?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+  const c=await fetch('/api/data/data/com.termux/files/home/projects/CrossWatch?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
   const mode=String(c?.scrobble?.mode||'').toLowerCase();
   const enabled=!!c?.scrobble?.enabled;
 

@@ -593,7 +593,7 @@
   };
 
   const fetchConfig = async () => {
-    try { const r = await fetch("/api/config", { cache: "no-store" }); return r.ok ? await r.json() : {}; }
+    try { const r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }); return r.ok ? await r.json() : {}; }
     catch { return {}; }
   };
 

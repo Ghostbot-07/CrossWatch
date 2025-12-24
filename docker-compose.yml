@@ -8,5 +8,5 @@ services:
     environment:
       TZ: Europe/Amsterdam
     volumes:
-      - /path/to/config:/config
+      - /path/to/data/data/com.termux/files/home/projects/CrossWatch:/data/data/com.termux/files/home/projects/CrossWatch
     restart: unless-stopped

@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
-_TTL_PATH = Path("/config/.cw_state/watchlist_wl_autoremove.json")
+_TTL_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/watchlist_wl_autoremove.json")
 _TTL_SECONDS = 120
 
 

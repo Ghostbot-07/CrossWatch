@@ -407,7 +407,7 @@ def reset_stats(
                     from services.statistics import REPORT_DIR
                 except Exception:
                     from pathlib import Path as _P
-                    REPORT_DIR = _P("/config/sync_reports")
+                    REPORT_DIR = _P("/data/data/com.termux/files/home/projects/CrossWatch/sync_reports")
 
                 for f in REPORT_DIR.glob("sync-*.json"):
                     try:

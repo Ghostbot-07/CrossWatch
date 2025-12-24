@@ -1,4 +1,4 @@
-# api/configAPI.py
+# api/data/data/com.termux/files/home/projects/CrossWatchAPI.py
 # CrossWatch - Configuration API for multiple services
 # Copyright (c) 2025-2026 CrossWatch / Cenodude (https://github.com/cenodude/CrossWatch)
 from __future__ import annotations
@@ -40,7 +40,7 @@ def _nostore(res: JSONResponse) -> JSONResponse:
 
 router = APIRouter(prefix="/api", tags=["config"])
 
-@router.get("/config")
+@router.get("/data/data/com.termux/files/home/projects/CrossWatch")
 def api_config() -> JSONResponse:
     env = _env()
     cfg = dict(env["load"]() or {})
@@ -50,7 +50,7 @@ def api_config() -> JSONResponse:
     except Exception: pass
     return _nostore(JSONResponse(cfg))
 
-@router.post("/config")
+@router.post("/data/data/com.termux/files/home/projects/CrossWatch")
 def api_config_save(payload: dict[str, Any] = Body(...)) -> dict[str, Any]:
     env = _env()
     incoming = dict(payload or {})

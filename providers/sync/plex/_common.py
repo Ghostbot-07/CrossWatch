@@ -153,7 +153,7 @@ def server_find_rating_key_by_guid(srv: Any, guids: Iterable[str]) -> str | None
 
 _FBGUID_MEMO: dict[str, Any] = {}  # key -> dict (success) or "__NOHIT__"
 _FBGUID_NOHIT = "__NOHIT__"
-_FBGUID_CACHE_PATH = "/config/.cw_state/plex_fallback_memo.json"
+_FBGUID_CACHE_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex_fallback_memo.json"
 
 
 def _fb_key_from_row(row: Any) -> str:

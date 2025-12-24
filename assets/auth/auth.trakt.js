@@ -20,7 +20,7 @@
   // Fetch the current config from the backend (no-cache)
   async function fetchConfig() {
     try {
-      var r = await fetch("/api/config", { cache: "no-store" });
+      var r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" });
       if (!r.ok) return null;
       var cfg = await r.json();
       return cfg || {};
@@ -164,7 +164,7 @@
       delete cfg.auth.trakt.token_type;
       delete cfg.auth.trakt.expires_at;
 
-      await fetch("/api/config", {
+      await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(cfg),

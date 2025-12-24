@@ -105,7 +105,7 @@
       <pre><code>docker run -d \
   --name crosswatch \
   -p 8787:8787 \
-  -v /path/to/config:/config \
+  -v /path/to/data/data/com.termux/files/home/projects/CrossWatch:/data/data/com.termux/files/home/projects/CrossWatch \
   -e TZ=Europe/Amsterdam \
   ghcr.io/cenodude/crosswatch:latest</code></pre>
 
@@ -120,7 +120,7 @@ services:
     environment:
       - TZ=Europe/Amsterdam
     volumes:
-      - /path/to/config:/config
+      - /path/to/data/data/com.termux/files/home/projects/CrossWatch:/data/data/com.termux/files/home/projects/CrossWatch
     restart: unless-stopped</code></pre>
 
       <p class="hint">Open <code>http://localhost:8787</code> after the container is up. Configure providers, create pairs, dry-run, then enable writes.</p>

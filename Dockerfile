@@ -45,7 +45,7 @@ COPY docker/run-sync.sh   /usr/local/bin/run-sync.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/run-sync.sh
 
 # --- runtime env ---
-ENV RUNTIME_DIR=/config \
+ENV RUNTIME_DIR=/data/data/com.termux/files/home/projects/CrossWatch \
     WEB_HOST=0.0.0.0 \
     WEB_PORT=8787 \
     WEBINTERFACE=yes \
@@ -56,7 +56,7 @@ HEALTHCHECK --interval=30s --timeout=5s --retries=5 \
   CMD ["python","-c","import os,socket,sys; s=socket.socket(); s.settimeout(2); p=int(os.environ.get('WEB_PORT','8787')); sys.exit(0 if s.connect_ex(('127.0.0.1',p))==0 else 1)"]
 
 EXPOSE 8787
-VOLUME ["/config"]
+VOLUME ["/data/data/com.termux/files/home/projects/CrossWatch"]
 
-# Keep root so entrypoint can chown /config then su to appuser
+# Keep root so entrypoint can chown /data/data/com.termux/files/home/projects/CrossWatch then su to appuser
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

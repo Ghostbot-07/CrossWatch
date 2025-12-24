@@ -1,4 +1,4 @@
-# cw_platform/config_base.py
+# cw_platform/data/data/com.termux/files/home/projects/CrossWatch_base.py
 # configuration management base.
 # Copyright (c) 2025-2026 CrossWatch / Cenodude (https://github.com/cenodude/CrossWatch)
 from __future__ import annotations
@@ -17,8 +17,8 @@ def CONFIG_BASE() -> Path:
         return Path(env)
 
     if Path("/app").exists():
-        # In container image mount /config as a writable volume
-        return Path("/config")
+        # In container image mount /data/data/com.termux/files/home/projects/CrossWatch as a writable volume
+        return Path("/data/data/com.termux/files/home/projects/CrossWatch")
     return Path(__file__).resolve().parents[1]
 
 
@@ -213,7 +213,7 @@ DEFAULT_CFG: dict[str, Any] = {
     },
 
     "crosswatch": {
-        "root_dir":         "/config/.cw_provider",    # Root folder for local provider state
+        "root_dir":         "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider",    # Root folder for local provider state
         "enabled":          True,                      # Enable/disable CrossWatch as sync provider
         "retention_days":   30,                        # Snapshot retention in days; 0 = keep forever
         "auto_snapshot":    True,                      # Take snapshot before mutating main JSONs

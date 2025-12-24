@@ -11,8 +11,8 @@ from typing import Any, Iterable
 
 import requests
 
-CONFIG_PATH = Path("/config/config.json")
-BACKUP_DIR = Path("/config/backup")
+CONFIG_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
+BACKUP_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/backup")
 RETENTION_DAYS = 15
 
 BASE = "https://api.simkl.com"
@@ -124,9 +124,9 @@ def build_meta(cfg: dict[str, Any]) -> dict[str, Any]:
     tok = str(b.get("access_token") or "").strip()
     cid = str(b.get("client_id") or b.get("api_key") or "").strip()
     if not tok:
-        raise RuntimeError("Missing simkl.access_token in /config/config.json")
+        raise RuntimeError("Missing simkl.access_token in /data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
     if not cid:
-        raise RuntimeError("Missing simkl.client_id in /config/config.json")
+        raise RuntimeError("Missing simkl.client_id in /data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
 
     timeout = float(b.get("timeout", 10) or 10)
     retries = int(b.get("max_retries", 3) or 3)

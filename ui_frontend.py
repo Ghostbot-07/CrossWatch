@@ -287,8 +287,8 @@ def _get_index_html_static() -> str:
           <div class="body">
             <div class="grid2">
               <div><label>Enable</label><select id="schEnabled"><option value="false">Disabled</option><option value="true">Enabled</option></select></div>
-              <div><label>Frequency</label><select id="schMode"><option value="hourly">Every hour</option><option value="every_n_hours">Every N hours</option><option value="daily_time">Daily at…</option></select></div>
-              <div><label>Every N hours</label><input id="schN" type="number" min="1" max="24" value="2"></div>
+              <div><label>Frequency</label><select id="schMode"><option value="hourly">Every hour</option><option value="every_n_hours">Every N minutes</option><option value="daily_time">Daily at…</option></select></div>
+              <div><label>Every N minutes</label><input id="schN" type="number" min="1" max="1440" value="2"></div>
               <div><label>Time</label><input id="schTime" type="time" value="03:30"></div>
             </div>
           </div>
@@ -350,7 +350,7 @@ def _get_index_html_static() -> str:
           <div class="sub" style="margin-top:1.25rem">CrossWatch Tracker</div>
           <div class="sub">
             Local backup tracker for Watchlist, Ratings and History snapshots
-            (stored under <code>/config/.cw_provider</code>).
+            (stored under <code>/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider</code>).
           </div>
 
           <div class="grid2">
@@ -514,7 +514,7 @@ let __cfg=null;
 
 async function getConfig(force=false){
   if(__cfg && !force) return __cfg;
-  try{ const r=await fetch('/api/config?ts='+Date.now(),{cache:'no-store'}); __cfg=r.ok?await r.json():{}; }
+  try{ const r=await fetch('/api/data/data/com.termux/files/home/projects/CrossWatch?ts='+Date.now(),{cache:'no-store'}); __cfg=r.ok?await r.json():{}; }
   catch{ __cfg={}; }
   return __cfg;
 }

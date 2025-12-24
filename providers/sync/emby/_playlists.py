@@ -9,7 +9,7 @@ from typing import Any, Iterable, Mapping
 
 from cw_platform.id_map import canonical_key, minimal as id_minimal
 
-UNRESOLVED_PATH = "/config/.cw_state/emby_playlists.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby_playlists.unresolved.json"
 
 
 def _log(msg: str) -> None:

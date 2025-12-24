@@ -16,8 +16,8 @@ from typing import Any, Callable, Iterable, Optional, TypeVar
 import requests
 from plexapi.server import PlexServer
 
-CONFIG_PATH = Path("/config/config.json")
-BACKUP_DIR = Path("/config/backup")
+CONFIG_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
+BACKUP_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/backup")
 RETENTION_DAYS = 15
 
 PLEX_TV = "https://plex.tv"

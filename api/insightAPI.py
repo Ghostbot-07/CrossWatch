@@ -564,7 +564,7 @@ def register_insights(app: FastAPI) -> None:
             info: dict[str, Any] = {}
             try:
                 cw_cfg = (cfg.get("crosswatch") or cfg.get("CrossWatch") or {}) or {}
-                root_dir = str(cw_cfg.get("root_dir") or "/config/.cw_provider").strip() or "/config/.cw_provider"
+                root_dir = str(cw_cfg.get("root_dir") or "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider").strip() or "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider"
                 snap_dir = Path(root_dir).joinpath("snapshots")
 
                 selected: dict[str, str] = {

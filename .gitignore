@@ -35,8 +35,8 @@ pip-wheel-metadata/
 # lokale docker compose overrides
 docker-compose.override.yml
 
-# volumes/configs die containers schrijven
-/config/
+# volumes/data/data/com.termux/files/home/projects/CrossWatchs die containers schrijven
+/data/data/com.termux/files/home/projects/CrossWatch/
 state.json
 config.json
 
@@ -45,3 +45,13 @@ config.json
 # ------------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
+
+# ------------------------------------------------------------------------------
+# CrossWatch runtime state (local only)
+# ------------------------------------------------------------------------------
+.cw_state/
+sync_reports/
+
+last_sync.json
+statistics.json
+tombstones.json

@@ -24,8 +24,8 @@ from services.editor import (
 
 router = APIRouter(prefix="/api/editor", tags=["editor"])
 
-_STATE_PATH = Path("/config/state.json")
-_POLICY_PATH = Path("/config/state.manual.json")
+_STATE_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/state.json")
+_POLICY_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/state.manual.json")
 
 def _atomic_write_json(path: Path, payload: Any) -> None:
     try:

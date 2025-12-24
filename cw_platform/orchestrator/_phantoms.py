@@ -7,7 +7,7 @@ from collections.abc import Iterable, Mapping, Sequence
 from typing import Any, TypeVar
 import json, os, time
 
-_DIR = "/config/.cw_state"
+_DIR = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state"
 T = TypeVar("T", bound=Mapping[str, Any])
 
 class PhantomGuard:

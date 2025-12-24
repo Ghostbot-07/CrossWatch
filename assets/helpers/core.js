@@ -1623,7 +1623,7 @@ async function openDetailsLog() {
 
   try {
     if (typeof window.appDebug === "undefined") {
-      const cfg = window._cfgCache || await fetch("/api/config", { cache: "no-store" }).then(r => r.json());
+      const cfg = window._cfgCache || await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }).then(r => r.json());
       window._cfgCache = cfg;
       window.appDebug = !!(cfg?.runtime?.debug || cfg?.runtime?.debug_mods);
     }
@@ -1860,7 +1860,7 @@ async function loadCrossWatchSnapshots(cfg) {
   };
 
   try {
-    const res = await fetch("/api/files?path=/config/.cw_provider/snapshots");
+    const res = await fetch("/api/files?path=/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider/snapshots");
     if (!res.ok) {
       console.warn("CrossWatch snapshot list HTTP", res.status);
       return;
@@ -1922,7 +1922,7 @@ async function loadCrossWatchSnapshots(cfg) {
 }
 
 async function loadConfig() {
-  const cfg = await fetch("/api/config", { cache: "no-store" }).then(r => r.json());
+  const cfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }).then(r => r.json());
   window._cfgCache = cfg;
 
   try { bindSyncVisibilityObservers?.(); } catch {}
@@ -2113,8 +2113,8 @@ async function saveSettings() {
   }
 
   try {
-    const serverResp = await fetch("/api/config", { cache: "no-store" });
-    if (!serverResp.ok) throw new Error(`GET /api/config ${serverResp.status}`);
+    const serverResp = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" });
+    if (!serverResp.ok) throw new Error(`GET /api/data/data/com.termux/files/home/projects/CrossWatch ${serverResp.status}`);
     const serverCfg = await serverResp.json();
     const cfg = JSON.parse(JSON.stringify(serverCfg || {}));
     let changed = false;
@@ -2624,12 +2624,12 @@ async function saveSettings() {
     }
 
     if (changed) {
-      const postCfg = await fetch("/api/config", {
+      const postCfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(cfg),
       });
-      if (!postCfg.ok) throw new Error(`POST /api/config ${postCfg.status}`);
+      if (!postCfg.ok) throw new Error(`POST /api/data/data/com.termux/files/home/projects/CrossWatch ${postCfg.status}`);
 
       try { if (typeof loadConfig === "function") await loadConfig(); } catch {}
       try { if (typeof _invalidatePairsCache === "function") _invalidatePairsCache(); } catch {}
@@ -2830,7 +2830,7 @@ async function updateTmdbHint() {
   }
 
   try {
-    const cfg = await fetch("/api/config", { cache: "no-store" }).then((r) =>
+    const cfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }).then((r) =>
       r.json()
     );
 
@@ -3201,7 +3201,7 @@ async function updateWatchlistPreview() {
 async function hasTmdbKey(){
   try{
     if(window._cfgCache) return !!(window._cfgCache.tmdb?.api_key||"").trim();
-    const cfg=await fetch("/api/config").then(r=>r.json());
+    const cfg=await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch").then(r=>r.json());
     window._cfgCache=cfg;
     return !!(cfg.tmdb?.api_key||"").trim();
   }catch{ return false; }
@@ -3220,7 +3220,7 @@ async function isWatchlistPreviewAllowed(){
       const ui = window._cfgCache.ui || window._cfgCache.user_interface || {};
       if (typeof ui.show_watchlist_preview === "boolean") return !!ui.show_watchlist_preview;
     }
-    const cfg = await fetch("/api/config", { cache: "no-store" }).then(r => r.json());
+    const cfg = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" }).then(r => r.json());
     window._cfgCache = cfg;
     const ui = cfg.ui || cfg.user_interface || {};
     if (typeof ui.show_watchlist_preview === "boolean") return !!ui.show_watchlist_preview;

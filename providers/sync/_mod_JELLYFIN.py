@@ -41,7 +41,7 @@ _FEATURES: dict[str, Any] = {
     "playlists": feat_playlists,
 }
 
-_HEALTH_SHADOW = "/config/.cw_state/jellyfin.health.shadow.json"
+_HEALTH_SHADOW = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/jellyfin.health.shadow.json"
 
 
 def _log(msg: str) -> None:

@@ -10,7 +10,7 @@ APP_GROUP="${APP_GROUP:-appuser}"
 APP_UID="${APP_UID:-1000}"
 APP_GID="${APP_GID:-1000}"
 APP_DIR="${APP_DIR:-/app}"
-RUNTIME_DIR="${RUNTIME_DIR:-/config}"
+RUNTIME_DIR="${RUNTIME_DIR:-/data/data/com.termux/files/home/projects/CrossWatch}"
 
 export PYTHONPATH="${APP_DIR}:${PYTHONPATH:-}"
 

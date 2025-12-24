@@ -54,7 +54,7 @@
     } catch { renderLibraries([]); }
   }
 
-  // --- hydrate from /api/config (auto when section becomes visible)
+  // --- hydrate from /api/data/data/com.termux/files/home/projects/CrossWatch (auto when section becomes visible)
   function embySectionLooksEmpty() {
     const s1 = Q("#emby_server") || Q("#emby_server_url");
     const u1 = Q("#emby_user") || Q("#emby_username");
@@ -63,11 +63,11 @@
     return vals.every(v => !v);
   }
 
-  // --- hydrate from /api/config (auto when section becomes visible)
+  // --- hydrate from /api/data/data/com.termux/files/home/projects/CrossWatch (auto when section becomes visible)
   async function hydrateFromConfig(force = false) {
     if (hydrated && !force) return;
     try {
-      const r = await fetch("/api/config", { cache: "no-store" });
+      const r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" });
       if (!r.ok) return;
       const cfg = await r.json();
       window.__cfg = cfg;

@@ -23,7 +23,7 @@ def _root(adapter: Any) -> Path:
         return base
     if isinstance(base, str) and base:
         return Path(base)
-    return Path("/config/.cw_provider")
+    return Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider")
 
 
 def _watchlist_path(adapter: Any) -> Path:

@@ -16,7 +16,7 @@ DEFAULT_DATE_FROM = START_OF_TIME_ISO
 UA = os.getenv("CW_UA", "CrossWatch/3.0 (SIMKL)")
 
 # state (watermarks)
-_STATE_DIR = Path("/config/.cw_state")
+_STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 _WATERMARK_PATH = _STATE_DIR / "simkl.watermarks.json"
 
 

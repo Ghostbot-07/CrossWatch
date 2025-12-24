@@ -8,8 +8,8 @@ from typing import List, Optional, Iterable, Tuple
 from urllib.parse import urlparse
 import requests
 
-CONFIG_PATH = Path("/config/config.json")
-BACKUP_DIR  = Path("/config/backup")
+CONFIG_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
+BACKUP_DIR  = Path("/data/data/com.termux/files/home/projects/CrossWatch/backup")
 RETENTION_DAYS = 15
 PAGE_SIZE, SHOW_PAGE, TIMEOUT = 200, 25, 30
 HISTORY_TYPES = "Movie,Episode"

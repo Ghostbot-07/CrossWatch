@@ -18,7 +18,7 @@ from ._common import (
 )
 from cw_platform.id_map import canonical_key, minimal as id_minimal, ids_from
 
-UNRESOLVED_PATH = "/config/.cw_state/plex_ratings.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex_ratings.unresolved.json"
 
 def _log(msg: str) -> None:
     if os.environ.get("CW_DEBUG") or os.environ.get("CW_PLEX_DEBUG"):
@@ -625,7 +625,7 @@ def build_index(adapter: Any, limit: int | None = None) -> dict[str, dict[str, A
                     continue
                 snap[key] = base
 
-            p = Path("/config/.cw_state/plex.ratings.snapshot.json")
+            p = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/plex.ratings.snapshot.json")
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text(
                 json.dumps(snap, ensure_ascii=False, indent=2, sort_keys=True),

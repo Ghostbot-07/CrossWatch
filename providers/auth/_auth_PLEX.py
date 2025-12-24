@@ -365,7 +365,7 @@ def html() -> str:
 
     (async ()=>{
       try{
-        const r = await fetch("/api/config",{cache:"no-store"});
+        const r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch",{cache:"no-store"});
         const cfg = await r.json();
         const on = !!(cfg?.plex?.verify_ssl);
         const cb = $("plex_verify_ssl"); if (cb) cb.checked = on;

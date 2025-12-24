@@ -88,7 +88,7 @@
   async function hydrateFromConfig(force = false) {
     if (hydrated && !force) return;
     try {
-      const r = await fetch("/api/config", { cache: "no-store" });
+      const r = await fetch("/api/data/data/com.termux/files/home/projects/CrossWatch", { cache: "no-store" });
       if (!r.ok) return;
       const cfg = await r.json();
       window.__cfg = cfg;

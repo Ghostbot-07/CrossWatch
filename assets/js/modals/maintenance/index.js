@@ -350,9 +350,9 @@ export default {
               <div class="summary-label">Paths</div>
               <div class="summary-paths">
                 Tracker root:
-                <code id="cxm-tracker-root">/config/.cw_provider</code><br>
+                <code id="cxm-tracker-root">/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider</code><br>
                 Provider cache:
-                <code id="cxm-cache-root">/config/.cw_state</code>
+                <code id="cxm-cache-root">/data/data/com.termux/files/home/projects/CrossWatch/.cw_state</code>
               </div>
             </div>
             <div>
@@ -394,7 +394,7 @@ export default {
                     <span class="action-tag">.cw_state</span>
                   </div>
                   <div class="action-desc">
-                    Clears provider shadow / flap files under <code>/config/.cw_state</code> so unresolved items and health state are retried.
+                    Clears provider shadow / flap files under <code>/data/data/com.termux/files/home/projects/CrossWatch/.cw_state</code> so unresolved items and health state are retried.
                   </div>
                 </div>
               </div>
@@ -409,10 +409,10 @@ export default {
                 <div class="action-copy">
                   <div class="action-line">
                     <div class="action-title">Remove metadata cache</div>
-                    <span class="action-tag">/config/cache</span>
+                    <span class="action-tag">/data/data/com.termux/files/home/projects/CrossWatch/cache</span>
                   </div>
                   <div class="action-desc">
-                    Deletes cached posters and metadata under <code>/config/cache</code>. Artwork and meta will be refetched when needed.
+                    Deletes cached posters and metadata under <code>/data/data/com.termux/files/home/projects/CrossWatch/cache</code>. Artwork and meta will be refetched when needed.
                   </div>
                 </div>
               </div>
@@ -507,8 +507,8 @@ export default {
           fjson("/api/maintenance/provider-cache").catch(() => null),
         ]);
 
-        const trackerRoot = tracker?.root || "/config/.cw_provider";
-        const cacheRoot = cache?.root || "/config/.cw_state";
+        const trackerRoot = tracker?.root || "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider";
+        const cacheRoot = cache?.root || "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state";
 
         $("#cxm-tracker-root", root).textContent = trackerRoot;
         $("#cxm-cache-root", root).textContent = cacheRoot;

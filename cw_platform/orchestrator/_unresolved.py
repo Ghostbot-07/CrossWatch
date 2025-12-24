@@ -9,7 +9,7 @@ from typing import Any
 import json
 import time
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 
 try:
     from ..id_map import canonical_key as _ck, minimal as _minimal  # type: ignore[attr-defined]

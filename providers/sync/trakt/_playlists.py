@@ -24,7 +24,7 @@ URL_LIST_ITEMS_FMT = f"{BASE}/users/me/lists/{{lid}}/items"
 URL_LIST_ADD_FMT = f"{BASE}/users/me/lists/{{lid}}/items"
 URL_LIST_REM_FMT = f"{BASE}/users/me/lists/{{lid}}/items/remove"
 
-UNRESOLVED_PATH = "/config/.cw_state/trakt_playlists.unresolved.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/trakt_playlists.unresolved.json"
 
 
 def _log(msg: str) -> None:

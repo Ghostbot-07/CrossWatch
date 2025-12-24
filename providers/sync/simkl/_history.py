@@ -26,7 +26,7 @@ URL_ALL_ITEMS = f"{BASE}/sync/all-items"
 URL_ADD = f"{BASE}/sync/history"
 URL_REMOVE = f"{BASE}/sync/history/remove"
 
-STATE_DIR = Path("/config/.cw_state")
+STATE_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/.cw_state")
 UNRESOLVED_PATH = str(STATE_DIR / "simkl_history.unresolved.json")
 SHADOW_PATH = str(STATE_DIR / "simkl.history.shadow.json")
 SHOW_MAP_PATH = str(STATE_DIR / "simkl.show.map.json")

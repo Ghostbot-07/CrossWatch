@@ -12,8 +12,8 @@ from typing import Any, Optional
 
 import requests
 
-CONFIG_PATH = Path("/config/config.json")
-BACKUP_DIR = Path("/config/backup")
+CONFIG_PATH = Path("/data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json")
+BACKUP_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/backup")
 RETENTION_DAYS = 15
 
 BASE = "https://api.trakt.tv"
@@ -135,7 +135,7 @@ def build_meta(cfg: dict[str, Any]) -> dict[str, Any]:
     tok = str(b.get("access_token") or "").strip()
     rtk = str(b.get("refresh_token") or "").strip()
     if not cid:
-        raise RuntimeError("Missing trakt.client_id in /config/config.json.")
+        raise RuntimeError("Missing trakt.client_id in /data/data/com.termux/files/home/projects/CrossWatch/data/data/com.termux/files/home/projects/CrossWatch.json.")
     if not tok and not (csec and rtk):
         raise RuntimeError("Missing trakt.access_token (or refresh_token+client_secret).")
     return {

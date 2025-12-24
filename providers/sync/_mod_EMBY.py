@@ -47,7 +47,7 @@ _FEATURES: dict[str, Any] = {
     "playlists": feat_playlists,
 }
 
-_HEALTH_SHADOW = "/config/.cw_state/emby.health.shadow.json"
+_HEALTH_SHADOW = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/emby.health.shadow.json"
 
 
 def _present_flags() -> dict[str, bool]:

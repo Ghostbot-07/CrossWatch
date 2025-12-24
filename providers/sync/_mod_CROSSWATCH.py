@@ -81,7 +81,7 @@ def get_manifest() -> Mapping[str, Any]:
                 "from_date": False,
             },
             "snapshots": {
-                "root_dir_default": "/config/.cw_provider",
+                "root_dir_default": "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider",
                 "managed_by": "CrossWatch",
             },
         },
@@ -90,7 +90,7 @@ def get_manifest() -> Mapping[str, Any]:
 
 @dataclass
 class CROSSWATCHConfig:
-    root_dir: str = "/config/.cw_provider"
+    root_dir: str = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider"
     retention_days: int = 30
     auto_snapshot: bool = True
     max_snapshots: int = 64
@@ -135,7 +135,7 @@ class CROSSWATCHModule:
                 return None
             return s
 
-        root_dir = str(cw_cfg.get("root_dir") or "/config/.cw_provider").strip() or "/config/.cw_provider"
+        root_dir = str(cw_cfg.get("root_dir") or "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider").strip() or "/data/data/com.termux/files/home/projects/CrossWatch/.cw_provider"
         self.cfg = CROSSWATCHConfig(
             root_dir=root_dir,
             retention_days=_int("retention_days", 30),

@@ -15,8 +15,8 @@ from ._common import (
     normalize as jelly_normalize,
 )
 
-UNRESOLVED_PATH = "/config/.cw_state/jellyfin_ratings.unresolved.json"
-SHADOW_PATH = "/config/.cw_state/jellyfin_ratings.shadow.json"
+UNRESOLVED_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/jellyfin_ratings.unresolved.json"
+SHADOW_PATH = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/jellyfin_ratings.shadow.json"
 
 
 # shadow 

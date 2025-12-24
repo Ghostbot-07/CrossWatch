@@ -89,7 +89,7 @@ def _hdr_int(headers: Mapping[str, str], key: str) -> int | None:
 
 
 def _load_trakt_last_limit_error(
-    path: str = "/config/.cw_state/trakt_last_limit_error.json",
+    path: str = "/data/data/com.termux/files/home/projects/CrossWatch/.cw_state/trakt_last_limit_error.json",
 ) -> dict[str, Any]:
     try:
         with open(path, "r", encoding="utf-8") as f:

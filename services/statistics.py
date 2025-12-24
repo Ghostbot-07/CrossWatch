@@ -19,10 +19,10 @@ try:
     from cw_platform.config_base import CONFIG as _CONFIG_DIR  # type: ignore
     CONFIG = Path(_CONFIG_DIR)
 except Exception:
-    CONFIG = Path(os.getenv("CW_CONFIG_DIR", "/config")).resolve()
+    CONFIG = Path(os.getenv("CW_CONFIG_DIR", "/data/data/com.termux/files/home/projects/CrossWatch")).resolve()
 
 STATS_PATH = CONFIG / "statistics.json"
-REPORT_DIR = Path("/config/sync_reports")
+REPORT_DIR = Path("/data/data/com.termux/files/home/projects/CrossWatch/sync_reports")
 
 _GUID_TMDB_RE = re.compile(r"tmdb://(?:movie|tv)/(\d+)", re.I)
 _GUID_IMDB_RE = re.compile(r"(tt\d{5,})", re.I)
